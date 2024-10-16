@@ -9,10 +9,13 @@ jobs:
 
   build-kernel:
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
 
+      - name: Add i386 architecture
+        run: sudo dpkg --add-architecture i386
+        
       - name: Update apt packages
         run: sudo apt-get update
   
